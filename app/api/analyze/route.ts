@@ -3,8 +3,6 @@ import { auth0 } from '@/lib/auth0';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
-const BACKBOARD_BASE = 'https://app.backboard.io/api';
-const BACKBOARD_KEY = process.env.BACKBOARD_API_KEY!;
 
 async function backboardPost(path: string, body: object) {
   const res = await fetch(`https://app.backboard.io/api${path}`, {
